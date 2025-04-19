@@ -51,7 +51,7 @@ final class NbtItem {
         return result;
     }
 
-    private <T> NbtEffect<T> withMeta(final Function<ItemMeta, NbtEffect<T>> action) {
+    private <TYPE> NbtEffect<TYPE> withMeta(final Function<ItemMeta, NbtEffect<TYPE>> action) {
         return NbtEffect.of(() -> {
             final ItemMeta meta = item.getItemMeta();
             if (meta == null) {
